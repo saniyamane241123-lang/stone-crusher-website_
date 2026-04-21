@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivdatta Stone Crusher & Infrastructure</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <!-- SUCCESS MODAL -->
+    <div id="successModal" class="overlay p-4" onclick="closeModal('successModal')">
+        <div class="bg-white rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl" onclick="event.stopPropagation()">
+            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-check-circle text-4xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Request Sent!</h3>
+            <p class="text-gray-600 mb-6">Mr. Tanaji Landage will contact you shortly.</p>
+            <button onclick="closeModal('successModal')" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition">Understood</button>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="overlay p-4" onclick="closeModal('lightbox')">
+        <div class="relative max-w-5xl w-full" onclick="event.stopPropagation()">
+            <button onclick="closeModal('lightbox')" class="absolute -top-12 right-0 text-white text-3xl">&times;</button>
+            <img id="lightboxImg" src="" class="w-full h-auto rounded-lg shadow-2xl">
+            <p id="lightboxCaption" class="text-white text-center mt-4 text-xl font-medium"></p>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 top-0 bg-slate-900/95 text-white shadow-2xl">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
+            <div>
+                <span class="text-xl font-black text-blue-400">Shivdatta</span>
+            </div>
+            <a href="tel:9876543210" class="bg-blue-600 px-6 py-2 rounded-md font-bold">
+                <i class="fas fa-phone-alt mr-2"></i> 9876543210
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero-section h-screen flex items-center justify-center text-center text-white px-6">
+        <div>
+            <h1 class="text-5xl font-extrabold">Shivdatta Stone Crusher</h1>
+            <p class="text-lg text-gray-300">Premium Construction Materials</p>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="py-24 max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center">Our Materials</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <div class="card">
+                <img src="images/stone6mm.jpg">
+                <h3>6mm Stone</h3>
+            </div>
+
+            <div class="card">
+                <img src="images/stone12mm.jpg">
+                <h3>12mm Stone</h3>
+            </div>
+
+            <div class="card">
+                <img src="images/stone20mm.jpg">
+                <h3>20mm Stone</h3>
+            </div>
+
+            <div class="card">
+                <img src="images/msand.jpg">
+                <h3>M-Sand</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-white py-10 text-center">
+        <h3 class="text-xl text-blue-400">Shivdatta Infrastructure</h3>
+        <p>Contact: 9876543210</p>
+    </footer>
+
+    <!-- JS -->
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function openLightbox(src, caption) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightboxCaption').innerText = caption;
+            openModal('lightbox');
+        }
+    </script>
+
+</body>
+</html>
